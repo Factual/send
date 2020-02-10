@@ -1,5 +1,5 @@
 const crypto = require('crypto');
-const geoip = require('fxa-geodb')();
+//const geoip = require('fxa-geodb')();
 const fetch = require('node-fetch');
 const config = require('./config');
 const pkg = require('../package.json');

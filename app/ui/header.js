@@ -26,7 +26,17 @@ class Header extends Component {
           `
         : html`
             <a class="flex flex-row items-center" href="/">
+<<<<<<< HEAD
               <img src="${assets.get('sendpass_logo.png')}#logo" style="padding: 0; display: block;margin: 0 auto;max-height: 100%;max-width: 100%;"/>
+=======
+              <img
+                alt="${this.state.translate('title')}"
+                src="${assets.get('icon.svg')}"
+              />
+              <svg viewBox="66 0 340 64" class="w-48 md:w-64">
+                <use xlink:href="${assets.get('wordmark.svg')}#logo" />
+              </svg>
+>>>>>>> 11319080a8fe012cc6bde61b4ad4ccdec3c2e618
             </a>
           `;
     return html`

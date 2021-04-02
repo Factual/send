@@ -6,11 +6,13 @@ module.exports = async function(req, res) {
     const id = req.params.id;
     const meta = req.meta;
     const ttl = await storage.ttl(id);
-    await storage.del(id);
+    await storage.kill(id);
     res.sendStatus(200);
     statDeleteEvent({
       id,
       ip: req.ip,
+      country: req.geo.country,
+      state: req.geo.state,
       owner: meta.owner,
       download_count: meta.dl,
       ttl,

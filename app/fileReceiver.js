@@ -1,7 +1,14 @@
 import Nanobus from 'nanobus';
 import Keychain from './keychain';
 import { delay, bytes, streamToArrayBuffer } from './utils';
-import { downloadFile, metadata, getApiUrl } from './api';
+import {
+  downloadFile,
+  downloadDone,
+  metadata,
+  getApiUrl,
+  reportLink,
+  getDownloadToken
+} from './api';
 import { blobStream } from './streams';
 import Zip from './zip';
 
@@ -13,7 +20,12 @@ export default class FileReceiver extends Nanobus {
       this.keychain.setPassword(fileInfo.password, fileInfo.url);
     }
     this.fileInfo = fileInfo;
+    this.dlToken = null;
     this.reset();
+  }
+
+  get id() {
+    return this.fileInfo.id;
   }
 
   get progressRatio() {
@@ -47,10 +59,14 @@ export default class FileReceiver extends Nanobus {
     const meta = await metadata(this.fileInfo.id, this.keychain);
     this.fileInfo.name = meta.name;
     this.fileInfo.type = meta.type;
-    this.fileInfo.iv = meta.iv;
     this.fileInfo.size = +meta.size;
     this.fileInfo.manifest = meta.manifest;
+    this.fileInfo.flagged = meta.flagged;
     this.state = 'ready';
+  }
+
+  async reportLink(reason) {
+    await reportLink(this.fileInfo.id, this.keychain, reason);
   }
 
   sendMessageToSw(msg) {
@@ -75,7 +91,7 @@ export default class FileReceiver extends Nanobus {
     this.state = 'downloading';
     this.downloadRequest = await downloadFile(
       this.fileInfo.id,
-      this.keychain,
+      this.dlToken,
       p => {
         this.progress = [p, this.fileInfo.size];
         this.emit('progress');
@@ -139,6 +155,7 @@ export default class FileReceiver extends Nanobus {
         url: this.fileInfo.url,
         size: this.fileInfo.size,
         nonce: this.keychain.nonce,
+        dlToken: this.dlToken,
         noSave
       };
       await this.sendMessageToSw(info);
@@ -204,11 +221,19 @@ export default class FileReceiver extends Nanobus {
     }
   }
 
-  download(options) {
-    if (options.stream) {
-      return this.downloadStream(options.noSave);
+  async download({ stream, storage, noSave }) {
+    this.dlToken = storage.getDownloadToken(this.id);
+    if (!this.dlToken) {
+      this.dlToken = await getDownloadToken(this.id, this.keychain);
+      storage.setDownloadToken(this.id, this.dlToken);
     }
-    return this.downloadBlob(options.noSave);
+    if (stream) {
+      await this.downloadStream(noSave);
+    } else {
+      await this.downloadBlob(noSave);
+    }
+    await downloadDone(this.id, this.dlToken);
+    storage.setDownloadToken(this.id);
   }
 }
 

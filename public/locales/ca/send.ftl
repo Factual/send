@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Comentaris
 importingFile = S'està important…
 encryptingFile = S'està xifrant…
 decryptingFile = S'està desxifrant…
@@ -116,6 +115,7 @@ legalDateStamp = Versió 1.0, amb data del 12 de març de 2019
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days } d { $hours } h { $minutes } min
 addFilesButton = Seleccioneu els fitxers que voleu pujar
+trustWarningMessage = Assegureu-vos que confieu en el destinatari quan compartiu dades confidencials.
 uploadButton = Puja
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Arrossegueu i deixeu anar els fitxers
@@ -153,3 +153,33 @@ shareLinkButton = Comparteix l'enllaç
 shareMessage = Baixeu «{ $name }» amb el { -send-brand }: compartició de fitxers senzilla i segura
 trailheadPromo = Hi ha una manera de protegir la vostra privadesa. Uniu-vos al Firefox.
 learnMore = Més informació.
+downloadFlagged = Aquest enllaç s'ha desactivat per infringir les condicions del servei.
+downloadConfirmTitle = Una cosa més
+downloadConfirmDescription = Assegureu-vos que confieu en la persona que us ha enviat aquest fitxer, perquè nosaltres no podem verificar que no malmeti el vostre dispositiu.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [one] Confio en la persona que ha enviat aquest fitxer
+       *[other] Confio en la persona que ha enviat aquests fitxers
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [one] Informa que aquest fitxer és sospitós
+       *[other] Informa que aquests fitxers són sospitos
+    }
+reportDescription = Ajudeu-nos a entendre què passa. Quin problema creieu que tenen aquests fitxers?
+reportUnknownDescription = Aneu a l'URL de l'enllaç sobre el qual voleu informar i feu clic a «{ reportFile }».
+reportButton = Informa
+reportReasonMalware = Aquests fitxers contenen programari maliciós o formen part d'un atac de pesca electrònica.
+reportReasonPii = Aquests fitxers contenen informació d'identificació personal meva.
+reportReasonAbuse = Aquests fitxers inclouen contingut il·legal o abusiu.
+reportReasonCopyright = Per informar sobre una infracció de drets d’autor o de marca comercial, utilitzeu el procés descrit en <a>aquesta pàgina</a>.
+reportedTitle = S'ha informat d'aquests fitxers
+reportedDescription = Gràcies. Hem rebut el vostre informe sobre aquests fitxers.

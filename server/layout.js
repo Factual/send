@@ -7,7 +7,7 @@ module.exports = function(state, body = '') {
     <!DOCTYPE html>
     <html lang="${state.locale}">
       <head>
-        <title>Factual SendPass</title>
+        <title>Foursquare SendPass</title>
         <base href="/" />
         <meta name="robots" content="${state.robots},noarchive" />
         <meta name="google" content="nositelinkssearchbox" />
@@ -15,8 +15,8 @@ module.exports = function(state, body = '') {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <meta property="og:title" content="Factual SendPass" />
-        <meta name="twitter:title" content="Factual SendPass" />
+        <meta property="og:title" content="Foursquare SendPass" />
+        <meta name="twitter:title" content="Foursquare SendPass" />
         <meta name="description" content="Encrypt and send files with a link that automatically expires to ensure your important documents don’t stay online forever." />
         <meta property="og:description" content="Encrypt and send files with a link that automatically expires to ensure your important documents don’t stay online forever." />
         <meta name="twitter:description" content="Encrypt and send files with a link that automatically expires to ensure your important documents don’t stay online forever." />

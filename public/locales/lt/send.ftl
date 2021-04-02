@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Pateikti atsiliepimą
 importingFile = Importuojama…
 encryptingFile = Šifruojama…
 decryptingFile = Iššifruojama…
@@ -132,6 +131,7 @@ legalDateStamp = 1.0 versija, 2019 m. kovo 12 d
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days } d. { $hours } val. { $minutes } min.
 addFilesButton = Rinktis failus įkėlimui
+trustWarningMessage = Dalindamiesi svarbiais duomenimis įsitikinkite, kad pasitikite gavėju.
 uploadButton = Įkelti
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Užtempkite ir numeskite failus čia
@@ -170,3 +170,35 @@ shareLinkButton = Dalintis saitu
 shareMessage = Atsisiųskite „{ $name }“ su „{ -send-brand }“: paprastas, saugus dalinimasis failais
 trailheadPromo = Yra būdas apsaugoti jūsų privatumą. Naudokite „Firefox“.
 learnMore = Sužinoti daugiau.
+downloadFlagged = Šis saitas panaikintas dėl paslaugos teikimo nuostatų pažeidimo.
+downloadConfirmTitle = Dar vienas dalykas
+downloadConfirmDescription = Įsitikinkite, kad pasitikite asmeniu, atsiuntusiu šį failą, nes mes negalime užtikrinti, kad jis nepakenks jūsų įrenginiui.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [one] Aš pasitikiu asmeniu, atsiuntusiu šį failą
+        [few] Aš pasitikiu asmeniu, atsiuntusiu šiuos failus
+       *[other] Aš pasitikiu asmeniu, atsiuntusiu šiuos failus
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [one] Pranešti apie įtartiną failą
+        [few] Pranešti apie įtartinus failus
+       *[other] Pranešti apie įtartinus failus
+    }
+reportDescription = Padėkite mums suprasti situaciją. Kas jūsų nuomone negerai su šiais failais?
+reportUnknownDescription = Atverkite saitą, apie kurį norite pranešti, ir spustelėkite „{ reportFile }“.
+reportButton = Pranešti
+reportReasonMalware = Šiuose failuose yra kenkėjiškos programinės įrangos, arba jie yra dalis sukčiavimo atakos.
+reportReasonPii = Šiuose failuose yra mano asmeninės informacijos.
+reportReasonAbuse = Šiuose failuose yra nelegalaus arba neteisėto turinio.
+reportReasonCopyright = Norėdami pranešti apie autorių teisių ar prekės ženklo pažeidimus, vadovaukitės <a>šiame puslapyje</a> aprašytu procesu.
+reportedTitle = Apie failus pranešta
+reportedDescription = Ačiū. Mes gavome jūsų pranešimą apie šiuos failus.

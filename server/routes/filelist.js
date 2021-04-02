@@ -13,28 +13,21 @@ function id(user, kid) {
 
 module.exports = {
   async get(req, res) {
-    if (!req.user) {
-      return res.sendStatus(401);
-    }
     const kid = req.params.id;
     try {
       const fileId = id(req.user, kid);
-      const contentLength = await storage.length(fileId);
-      const fileStream = await storage.get(fileId);
+      const { length, stream } = await storage.get(fileId);
       res.writeHead(200, {
         'Content-Type': 'application/octet-stream',
-        'Content-Length': contentLength
+        'Content-Length': length
       });
-      fileStream.pipe(res);
+      stream.pipe(res);
     } catch (e) {
       res.sendStatus(404);
     }
   },
 
   async post(req, res) {
-    if (!req.user) {
-      return res.sendStatus(401);
-    }
     const kid = req.params.id;
     try {
       const limiter = new Limiter(1024 * 1024 * 10);

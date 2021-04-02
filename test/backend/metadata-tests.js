@@ -6,7 +6,7 @@ const storage = {
   length: sinon.stub()
 };
 
-function request(id, meta) {
+function request(id, meta = {}) {
   return {
     params: { id },
     meta
@@ -48,7 +48,7 @@ describe('/api/metadata', function() {
     storage.ttl.returns(Promise.resolve(123));
     const meta = {
       dlimit: 1,
-      dl: 0,
+      dlToken: 0,
       metadata: 'foo'
     };
     const res = response();

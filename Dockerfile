@@ -6,7 +6,7 @@
 
 
 # Build project
-FROM node:10 AS builder
+FROM node:12 AS builder
 RUN set -x \
     # Add user
     && addgroup --gid 10001 app \
@@ -19,15 +19,14 @@ RUN set -x \
 COPY --chown=app:app . /app
 USER app
 WORKDIR /app
-RUN ls -la
 RUN set -x \
     # Build
-    && npm ci \
+    && PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm ci \
     && npm run build
 
 
 # Main image
-FROM node:10-slim
+FROM node:12-slim
 RUN set -x \
     # Add user
     && addgroup --gid 10001 app \
@@ -37,7 +36,9 @@ RUN set -x \
         --home /app \
         --uid 10001 \
         app
-RUN apt-get update && apt-get -y install git-core
+RUN apt-get update && apt-get -y install \
+    git-core \
+    && rm -rf /var/lib/apt/lists/*
 USER app
 WORKDIR /app
 COPY --chown=app:app package*.json ./
@@ -47,7 +48,6 @@ COPY --chown=app:app public/locales public/locales
 COPY --chown=app:app server server
 COPY --chown=app:app --from=builder /app/dist dist
 
-RUN ls -la
 RUN npm ci --production && npm cache clean --force
 RUN mkdir -p /app/.config/configstore
 RUN ln -s dist/version.json version.json

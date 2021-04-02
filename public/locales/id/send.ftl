@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Saran
 importingFile = Mengimpor…
 encryptingFile = Mengenkripsi...
 decryptingFile = Mendekripsi...
@@ -108,6 +107,7 @@ legalDateStamp = Versi 1.0, tertanggal 12 Maret 2019
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days }h { $hours }j { $minutes }m
 addFilesButton = Pilih berkas untuk diunggah
+trustWarningMessage = Pastikan Anda mempercayai penerima Anda saat berbagi data sensitif.
 uploadButton = Unggah
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Seret dan jatuhkan berkas
@@ -144,3 +144,31 @@ shareLinkButton = Bagikan tautan
 shareMessage = Unduh "{ $name }" dengan { -send-brand }: berbagi berkas dengan sederhana dan aman
 trailheadPromo = Ada cara untuk melindungi privasi Anda. Bergabunglah dengan Firefox.
 learnMore = Pelajari lebih lanjut.
+downloadFlagged = Tautan ini telah dinonaktifkan karena melanggar persyaratan layanan.
+downloadConfirmTitle = Satu hal lagi
+downloadConfirmDescription = Pastikan Anda memercayai orang yang mengirimi Anda file ini karena kami tidak dapat memverifikasi bahwa hal itu tidak akan merusak perangkat Anda.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+       *[other] Saya percaya orang yang mengirim file-file ini
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+       *[other] Laporkan file-file ini karena mencurigakan
+    }
+reportDescription = Bantu kami memahami apa yang sedang terjadi. Apa yang menurut Anda salah dengan file-file ini?
+reportUnknownDescription = Buka url tautan yang ingin Anda laporkan dan klik “{ reportFile }”.
+reportButton = Melaporkan
+reportReasonMalware = File-file ini mengandung malware atau merupakan bagian dari serangan phishing.
+reportReasonPii = File-file ini mengandung informasi pribadi tentang saya.
+reportReasonAbuse = File-file ini mengandung konten ilegal atau kasar.
+reportReasonCopyright = Untuk melaporkan pelanggaran hak cipta atau merek dagang, gunakan proses yang dijelaskan di <a> laman ini </a>.
+reportedTitle = File Dilaporkan
+reportedDescription = Terima kasih. Kami telah menerima laporan Anda tentang file-file ini.

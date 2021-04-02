@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Komentar
 importingFile = Importěrujo se...
 encryptingFile = Koděrujo se...
 decryptingFile = Dešifrěrujo se...
@@ -132,6 +131,7 @@ legalDateStamp = Wersija 1.0 wót 12. měrca 2019
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days }ź { $hours }g { $minutes }m
 addFilesButton = Dataje za nagrawanje wubraś
+trustWarningMessage = Wy měł dostawarjeju dowěriś, gaž sensibelne daty źěliśo.
 uploadButton = Nagraś
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Śěgniśo a wótpołožćo dataje
@@ -171,3 +171,37 @@ shareLinkButton = Wótkaz źěliś
 shareMessage = Ześěgniśo „{ $name }“ z { -send-brand }: jadnore, wěste źělenje datajow
 trailheadPromo = Jo móžnosć, wašu priwatnosć šćitaś. Pśiźćo k Firefox.
 learnMore = Dalšne informacije.
+downloadFlagged = Toś ten wótkaz jo se znjemóžnił pśestupjenja wužywańskich wuměnjenjow dla.
+downloadConfirmTitle = Jadna wěc hyšći
+downloadConfirmDescription = Wy měł wótpósłarjeju toś teje dataje dowěriś, dokulaž njamóžomy pśeglědaś, lěc to waš rěd kazy.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [one] Dowěrim wósobje, kótaraž jo pósłała toś tu dataju
+        [two] Dowěrim wósobje, kótaraž jo pósłała toś tej dataji
+        [few] Dowěrim wósobje, kótaraž jo pósłała toś te dataje
+       *[other] Dowěrim wósobje, kótaraž jo pósłała toś te dataje
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [one] Toś tu dataju ako suspektnu k wěsći daś
+        [two] Toś tej dataji ako suspektnej k wěsći daś
+        [few] Toś te dataje ako suspektne k wěsći daś
+       *[other] Toś te dataje ako suspektne k wěsći daś
+    }
+reportDescription = Pomagajśo nam rozumić, co se stawa. Co pó wašom měnjenju njejo w pórědku z toś tymi datajami?
+reportUnknownDescription = Źiśo pšosym k URL wótkaza, kótaryž cośo k wěsći daś a klikniśo na „{ reportFile }“.
+reportButton = K wěsći daś
+reportReasonMalware = Toś te dataje škódnu softwaru wopśimuju abo su źěl napada kšadnjenja datow.
+reportReasonPii = Toś te dataje wósobinske informacije wó mnje, kótarež mógu mě identificěrowaś.
+reportReasonAbuse = Toś te dataje njedowólone abo ranjece wopśimjeśe wopśimuju.
+reportReasonCopyright = Aby pśestupjenje awtorskego pšawa abo pšawa wikowwych markow k wěsći dał, wužywajśo póstupowanje, kótarež se na <a>toś tom boku</a> wopisujo.
+reportedTitle = Dataje k wěsći dane
+reportedDescription = Wjeliki źěk. Smy dostali wašu rozpšawu wó toś tych datajach.

@@ -1,5 +1,10 @@
 /* global Android */
-const html = require('choo/html');
+let html;
+try {
+  html = require('choo/html');
+} catch (e) {
+  // running in the service worker
+}
 const b64 = require('base64-js');
 
 function arrayToB64(array) {
@@ -137,11 +142,15 @@ function openLinksInNewTab(links, should = true) {
 
 function browserName() {
   try {
+    // order of these matters
     if (/firefox/i.test(navigator.userAgent)) {
       return 'firefox';
     }
     if (/edge/i.test(navigator.userAgent)) {
       return 'edge';
+    }
+    if (/edg/i.test(navigator.userAgent)) {
+      return 'edgium';
     }
     if (/trident/i.test(navigator.userAgent)) {
       return 'ie';
@@ -267,7 +276,15 @@ function setTranslate(t) {
   translate = t;
 }
 
+function concat(b1, b2) {
+  const result = new Uint8Array(b1.length + b2.length);
+  result.set(b1, 0);
+  result.set(b2, b1.length);
+  return result;
+}
+
 module.exports = {
+  concat,
   locale,
   fadeOut,
   delay,

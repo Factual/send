@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Adborth
 importingFile = Mewnforio…
 encryptingFile = Wrthi'n amgryptio…
 decryptingFile = Wrthi'n dadgryptio…
@@ -148,6 +147,7 @@ legalDateStamp = Fersiwn 1.0, dyddiedig Mawrth 12, 2019
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days } d { $hours } a { $minutes } m
 addFilesButton = Dewis ffeiliau i'w llwytho i fyny
+trustWarningMessage = Gwnewch yn siŵr eich bod yn ymddiried yn eich derbynnydd pan yn rhannu data sensitif.
 uploadButton = Llwytho i fyny
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Llusgo a gollwng ffeiliau
@@ -189,3 +189,41 @@ shareLinkButton = Rhannu'r ddolen
 shareMessage = Llwytho i lawr “{ $name }” gyda { -send-brand }: rhannu ffeiliau syml a diogel
 trailheadPromo = Mae ffordd o ddiogelu eich preifatrwydd. Ymunwch â Firefox.
 learnMore = Dysgu rhagor.
+downloadFlagged = Mae'r ddolen wedi'i analluogi am fynd yn groes i'r telerau gwasanaeth.
+downloadConfirmTitle = Un peth arall
+downloadConfirmDescription = Gwnewch yn siŵr eich bod yn ymddiried yn y person a anfonodd y ffeil hon atoch oherwydd nid ydym yn gallu gwirio na fydd yn niweidio'ch dyfais.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [zero] Rwy'n ymddiried yn y person anfonodd yr { $count } ffeil yma
+        [one] Rwy'n ymddiried yn y person anfonodd yr { $count } ffeil yma
+        [two] Rwy'n ymddiried yn y person anfonodd yr { $count } ffeil yma
+        [few] Rwy'n ymddiried yn y person anfonodd yr { $count } ffeil yma
+        [many] Rwy'n ymddiried yn y person anfonodd yr { $count } ffeil yma
+       *[other] Rwy'n ymddiried yn y person anfonodd yr { $count } ffeil yma
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [zero] Adrodd y { $count } ffeil yma fel rhai amheus
+        [one] Adrodd y { $count } ffeil yma fel un amheus
+        [two] Adrodd y { $count } ffeil yma fel rhai amheus
+        [few] Adrodd y { $count } ffeil yma fel rhai amheus
+        [many] Adrodd y { $count } ffeil yma fel rhai amheus
+       *[other] Adrodd y { $count } ffeil yma fel rhai amheus
+    }
+reportDescription = Helpwch ni i ddeall beth sy'n digwydd. Beth ydych chi'n meddwl sydd o'i le gyda'r ffeiliau hyn?
+reportUnknownDescription = Ewch i url y ddolen rydych am adrodd amdani a chlicio “{ reportFile }”.
+reportButton = Adrodd
+reportReasonMalware = Mae'r ffeiliau hyn yn cynnwys meddalwedd maleisus neu'n rhan o ymosodiad gwe-rwydo.
+reportReasonPii = Mae'r ffeiliau hyn yn cynnwys gwybodaeth bersonol adnabyddadwy amdanaf i.
+reportReasonAbuse = Mae'r ffeiliau hyn yn cynnwys deunydd anghyfreithlon neu ymosodol.
+reportReasonCopyright = I adrodd ar dorri hawlfraint neu nod masnach, defnyddiwch y broses sy'n cael ei ddisgrifio yn y <a>dudalen hon</a>.
+reportedTitle = Ffeiliau Adroddwyd Amdanynt
+reportedDescription = Diolch. Rydym wedi derbyn eich adroddiad ar y ffeiliau hyn.

@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Återkoppling
 importingFile = Importerar…
 encryptingFile = Krypterar…
 decryptingFile = Avkodar…
@@ -116,6 +115,7 @@ legalDateStamp = Version 1.0, daterad den 12 mars 2019
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days }d { $hours }t { $minutes }m
 addFilesButton = Välj filer som ska laddas upp
+trustWarningMessage = Se till att du litar på din mottagare när du delar känslig information.
 uploadButton = Ladda upp
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Dra och släpp filer
@@ -153,3 +153,33 @@ shareLinkButton = Dela länk
 shareMessage = Ladda ner "{ $name }" med { -send-brand }: enkel, säker fildelning
 trailheadPromo = Det finns ett sätt att skydda din integritet. Gå med i Firefox.
 learnMore = Läs mer.
+downloadFlagged = Den här länken har inaktiverats pga brott mot användarvillkoren.
+downloadConfirmTitle = En sak till
+downloadConfirmDescription = Se till att du litar på personen som skickade dig den här filen eftersom vi inte kan verifiera att den inte skadar din enhet.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [one] Jag litar på personen som skickade denna filen
+       *[other] Jag litar på personen som skickade dessa filer
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [one] Rapportera denna filen som misstänkt
+       *[other] Rapportera dessa filer som misstänkta
+    }
+reportDescription = Hjälp oss att förstå vad som händer. Vad tycker du är fel med dessa filer?
+reportUnknownDescription = Gå till den url till länken du vill rapportera och klicka på "{ reportFile }".
+reportButton = Rapportera
+reportReasonMalware = Dessa filer innehåller skadlig kod eller är en del av en nätfiskeattack.
+reportReasonPii = Dessa filer innehåller personlig identifierbar information om mig.
+reportReasonAbuse = Dessa filer innehåller olagligt eller våldsamt innehåll.
+reportReasonCopyright = För att rapportera intrång i upphovsrätt eller varumärke, använd processen som beskrivs på <a>den här sidan</a>.
+reportedTitle = Rapporterade filer
+reportedDescription = Tack. Vi har fått din rapport om dessa filer.

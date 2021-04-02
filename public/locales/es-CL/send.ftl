@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Comentarios
 importingFile = Importando…
 encryptingFile = Cifrando…
 decryptingFile = Descifrando…
@@ -53,7 +52,7 @@ passwordSetError = Esta contraseña no pudo ser establecida
 -send-short-brand = Send
 -firefox = Firefox
 -mozilla = Mozilla
-introTitle = Intercambio de archivos sencillo y privado
+introTitle = Intercambio de archivos simple y privado
 introDescription = { -send-brand } te permite compartir archivos con cifrado de extremo a extremo y un enlace que expira automáticamente. Así puedes mantener lo que compartes en privado y asegurarte de que tus cosas no permanezcan en línea para siempre.
 notifyUploadEncryptDone = Tu archivo está cifrado y listo para enviar
 # downloadCount is from the downloadCount string and timespan is a timespanMinutes string. ex. 'Expires after 2 downloads or 25 minutes'
@@ -95,7 +94,7 @@ copyLinkDescription = Copiar el enlace para compartir el archivo:
 copyLinkButton = Copiar enlace
 downloadTitle = Bajando archivos
 downloadDescription = Este archivo fue compartido a través de { -send-brand } con cifrado de punto a punto y un enlace que expira automáticamente.
-trySendDescription = Prueba { -send-brand } para compartir archivos de forma sencilla y segura.
+trySendDescription = Prueba { -send-brand } para compartir archivos de forma simple y segura.
 # count will always be > 10
 tooManyFiles =
     { $count ->
@@ -116,6 +115,7 @@ legalDateStamp = Versión 1.0 del 12 de marzo de 2019
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days }d { $hours }h { $minutes }m
 addFilesButton = Selecciona los archivos a subir
+trustWarningMessage = Asegúrate de que confías en tu destinatario cuando compartas datos sensibles.
 uploadButton = Subir
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Arrastra y suelta archivos
@@ -153,3 +153,33 @@ shareLinkButton = Compartir enlace
 shareMessage = Baja "{ $name }" con { -send-brand }: compartir archivos de forma simple y segura
 trailheadPromo = Hay una forma de proteger tu privacidad. Únete a Firefox.
 learnMore = Aprender más.
+downloadFlagged = Este enlace ha sido deshabilitado por violar los términos del servicio.
+downloadConfirmTitle = Una cosa más
+downloadConfirmDescription = Asegúrate de confiar en la persona que te envió este archivo porque no podemos verificar que no dañará tu dispositivo.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [one] Confío en la persona que envió es archivo
+       *[other] Confío en la persona que envió estos archivos
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [one] Reportar este archivo como sospechoso
+       *[other] Reportar estos archivos como sospechosos
+    }
+reportDescription = Ayúdanos a entender lo que está pasando. ¿Qué crees que está mal con estos archivos?
+reportUnknownDescription = Por favor, ve a la url del enlace que quieres reportar y haz clic en "{ reportFile }".
+reportButton = Reportar
+reportReasonMalware = Estos archivos contienen malware o son parte de un ataque de phishing.
+reportReasonPii = Estos archivos contienen información personal identificable sobre mí.
+reportReasonAbuse = Estos archivos contienen contenido ilegal o abusivo.
+reportReasonCopyright = Para denunciar una infracción de derechos de autor o de marca registrada, sigue el proceso descrito en <a>esta página</a>.
+reportedTitle = Archivos reportados
+reportedDescription = Gracias. Hemos recibido tu reporte sobre estos archivos.

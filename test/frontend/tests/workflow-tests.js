@@ -2,12 +2,13 @@ import assert from 'assert';
 import Archive from '../../../app/archive';
 import FileSender from '../../../app/fileSender';
 import FileReceiver from '../../../app/fileReceiver';
+import storage from '../../../app/storage';
 
 const headless = /Headless/.test(navigator.userAgent);
 // TODO: save on headless doesn't work as it used to since it now
 // follows a link instead of fetch. Maybe there's a way to make it
 // work? For now always set noSave.
-const options = { noSave: true || !headless, stream: true }; // only run the saveFile code if headless
+const options = { noSave: true || !headless, stream: true, storage }; // only run the saveFile code if headless
 
 // FileSender uses a File in real life but a Blob works for testing
 const blob = new Blob([new ArrayBuffer(1024 * 128)], { type: 'text/plain' });
@@ -181,14 +182,15 @@ describe('Upload / Download flow', function() {
 
   it('can allow multiple downloads', async function() {
     const fs = new FileSender();
-    const file = await fs.upload(archive);
+    const a = new Archive([blob]);
+    a.dlimit = 2;
+    const file = await fs.upload(a);
     const fr = new FileReceiver({
       secretKey: file.toJSON().secretKey,
       id: file.id,
       nonce: file.keychain.nonce,
       requiresPassword: false
     });
-    await file.changeLimit(2);
     await fr.getMetadata();
     await fr.download(options);
     await file.updateDownloadCount();

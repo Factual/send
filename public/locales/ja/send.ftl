@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = フィードバック
 importingFile = インポート中...
 encryptingFile = 暗号化中...
 decryptingFile = 復号化中...
@@ -108,6 +107,7 @@ legalDateStamp = バージョン 1.0, 2019年3月12日時点
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days } 日 { $hours } 時 { $minutes } 分
 addFilesButton = アップロードするファイルを選択
+trustWarningMessage = 機密データを共有する場合は、受信者が信頼できる相手であることを確認してください。
 uploadButton = アップロード
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = ファイルをドラッグ＆ドロップ
@@ -134,7 +134,9 @@ okButton = OK
 downloadingTitle = ダウンロード中
 noStreamsWarning = このブラウザーは、この大きさのファイルを復号化できません。
 noStreamsOptionCopy = リンクをコピーして他のブラウザーで開いてください
+noStreamsOptionFirefox = Firefox を試してみる
 noStreamsOptionDownload = このブラウザーで続ける
+downloadFirefoxPromo = { -send-short-brand } はすべてが新しくなった { -firefox } により提供されています。
 # the next line after the colon contains a file name
 shareLinkDescription = ファイルへのリンクを共有しましょう:
 shareLinkButton = リンクを共有
@@ -142,3 +144,31 @@ shareLinkButton = リンクを共有
 shareMessage = { -send-brand } で "{ $name }" をダウンロード: シンプルで安全なファイル共有
 trailheadPromo = プライバシーを保護する方法があります。Firefox を試してください。
 learnMore = 詳細情報
+downloadFlagged = サービス利用規約に違反しているため、このリンクは無効になっています。
+downloadConfirmTitle = さらにもう一つ
+downloadConfirmDescription = このファイルが端末に悪影響を及ぼさないことを確かめられないため、送信者が信頼できる相手であることを確認してください。
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+       *[other] ファイルの送信者を信頼します
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+       *[other] 疑わしいファイルとして報告する
+    }
+reportDescription = 詳しく調べるためにお知らせください。これらのファイルの何が問題だと思われますか？
+reportUnknownDescription = 報告したい内容のリンクの URL にアクセスし、“{ reportFile }” をクリックしてください。
+reportButton = 問題を報告
+reportReasonMalware = これらのファイルにはマルウェアが含まれているか、フィッシング詐欺攻撃の一部です。
+reportReasonPii = これらのファイルには私に関する個人情報が含まれています。
+reportReasonAbuse = これらのファイルには違法または虐待的なコンテンツが含まれています。
+reportReasonCopyright = 著作権または商標の侵害を報告するには、<a>このページ</a> に記載された手続きに従ってください。
+reportedTitle = ファイルを報告しました
+reportedDescription = ご協力ありがとうございました。これらのファイルに関する報告を受け取りました。

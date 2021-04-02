@@ -9,7 +9,7 @@ import contentDisposition from 'content-disposition';
 let noSave = false;
 const map = new Map();
 const IMAGES = /.*\.(png|svg|jpg)$/;
-const VERSIONED_ASSET = /\.[A-Fa-f0-9]{8}\.(js|css|png|svg|jpg)$/;
+const VERSIONED_ASSET = /\.[A-Fa-f0-9]{8}\.(js|css|png|svg|jpg)(#\w+)?$/;
 const DOWNLOAD_URL = /\/api\/download\/([A-Fa-f0-9]{4,})/;
 const FONT = /\.woff2?$/;
 
@@ -34,7 +34,7 @@ async function decryptStream(id) {
       keychain.setPassword(file.password, file.url);
     }
 
-    file.download = downloadStream(id, keychain);
+    file.download = downloadStream(id, file.dlToken);
 
     const body = await file.download.result;
 
@@ -146,6 +146,7 @@ self.onmessage = event => {
       type: event.data.type,
       manifest: event.data.manifest,
       size: event.data.size,
+      dlToken: event.data.dlToken,
       progress: 0
     };
     map.set(event.data.id, info);

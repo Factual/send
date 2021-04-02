@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Feedback
 importingFile = Importazione in corso…
 encryptingFile = Crittazione in corso…
 decryptingFile = Decrittazione in corso…
@@ -57,7 +56,7 @@ introTitle = Condividi file in modo semplice e riservato
 introDescription = { -send-brand } permette di condividere file con crittografia end-to-end attraverso un link che scade automaticamente. In questo modo hai la garanzia che i tuoi contenuti vengano condivisi in modo riservato e non rimangano online per sempre.
 notifyUploadEncryptDone = Il file è crittato e pronto per l’invio
 # downloadCount is from the downloadCount string and timespan is a timespanMinutes string. ex. 'Expires after 2 downloads or 25 minutes'
-archiveExpiryInfo = Scade dopo { $downloadCount } o dopo { $timespan }
+archiveExpiryInfo = Scade dopo { $downloadCount } o tra { $timespan }
 timespanMinutes =
     { $num ->
         [one] 1 minuto
@@ -108,6 +107,7 @@ legalDateStamp = Versione 1.0 del 12 marzo 2019
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days }g { $hours }h { $minutes }m
 addFilesButton = Seleziona i file da caricare
+trustWarningMessage = Assicurati che il destinatario sia affidabile quando condividi dati sensibili.
 uploadButton = Carica
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Trascina e rilascia i file
@@ -143,5 +143,35 @@ shareLinkDescription = Condividi il link al tuo file:
 shareLinkButton = Condividi link
 # $name is the name of the file
 shareMessage = Scarica “{ $name }” con { -send-brand }: condivisione di file semplice e sicura
-trailheadPromo = C’è un modo per proteggere la tua privacy. Entra a far parte di Firefox.
+trailheadPromo = C’è un modo per proteggere la tua privacy. Entra in Firefox.
 learnMore = Ulteriori informazioni.
+downloadFlagged = Questo link è stato disattivato perché vìola i termini di servizio.
+downloadConfirmTitle = Un’ultima cosa
+downloadConfirmDescription = Assicurati che la persona che ti ha inviato questo file sia affidabile perché non possiamo garantire che non sia in grado di danneggiare il tuo dispositivo.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [one] Considero affidabile la persona che ha inviato questo file
+       *[other] Considero affidabile la persona che ha inviato questi file
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [one] Segnala questo file come sospetto
+       *[other] Segnala questi file come sospetti
+    }
+reportDescription = Aiutaci a capire che cosa è successo. Qual è il problema con questi file?
+reportUnknownDescription = Vai all’indirizzo del link che vuoi segnalare e fai clic su “{ reportFile }”.
+reportButton = Segnala
+reportReasonMalware = Questi file contengono malware o fanno parte di un attacco phishing.
+reportReasonPii = Questi file contengono informazioni personali identificabili che mi riguardano.
+reportReasonAbuse = Questi file contengono contenuti illegali o offensivi.
+reportReasonCopyright = Per segnalare violazioni del copyright o abusi di marchi registrati, utilizzare la procedura descritta in <a>questa pagina</a>.
+reportedTitle = File segnalati
+reportedDescription = Grazie, abbiamo ricevuto la tua segnalazione relativa a questi file.

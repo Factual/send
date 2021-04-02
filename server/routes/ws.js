@@ -41,6 +41,14 @@ module.exports = function(ws, req) {
         ? config.max_downloads
         : config.anon_max_downloads;
 
+      if (config.fxa_required && !user) {
+        ws.send(
+          JSON.stringify({
+            error: 401
+          })
+        );
+        return ws.close();
+      }
       if (
         !metadata ||
         !auth ||
@@ -58,6 +66,7 @@ module.exports = function(ws, req) {
 
       const meta = {
         owner,
+        fxa: user ? 1 : 0,
         metadata,
         dlimit,
         auth: auth.split(' ')[1],
@@ -103,6 +112,8 @@ module.exports = function(ws, req) {
         statUploadEvent({
           id: newId,
           ip: req.ip,
+          country: req.geo.country,
+          state: req.geo.state,
           owner,
           dlimit,
           timeLimit,

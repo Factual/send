@@ -7,7 +7,16 @@ function banner(state) {
     return; // server side
   }
   const show =
+<<<<<<< HEAD
     !state.capabilities.standalone && !state.route.startsWith('/unsupported/');
+=======
+    !state.capabilities.standalone &&
+    !state.route.startsWith('/unsupported/') &&
+    state.locale === 'en-US';
+  if (show) {
+    return state.cache(Promo, 'promo').render();
+  }
+>>>>>>> 11319080a8fe012cc6bde61b4ad4ccdec3c2e618
 }
 
 module.exports = function body(main) {

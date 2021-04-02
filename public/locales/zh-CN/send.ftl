@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = 反馈
 importingFile = 正在导入…
 encryptingFile = 正在加密…
 decryptingFile = 正在解密…
@@ -103,7 +102,7 @@ tooManyFiles =
 # count will always be > 10
 tooManyArchives =
     { $count ->
-       *[other] 只可上传 { $count } 个档案。
+       *[other] 只可上传 { $count } 个压缩文件。
     }
 expiredTitle = 此链接已过期。
 notSupportedDescription = { -send-brand } 无法在此浏览器上正常工作。{ -send-short-brand } 与最新版本 { -firefox } 配合使用体验最佳，也适用于目前的大多数浏览器。
@@ -113,6 +112,7 @@ legalDateStamp = 版本 1.0，于 2019年3月12日
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days } 天 { $hours } 小时 { $minutes } 分钟
 addFilesButton = 选择要上传的文件
+trustWarningMessage = 分享敏感数据时，请确保您信任接收人。
 uploadButton = 上传
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = 拖放文件
@@ -148,5 +148,35 @@ shareLinkDescription = 您的文件链接：
 shareLinkButton = 分享链接
 # $name is the name of the file
 shareMessage = 使用 { -send-brand } 下载“{ $name }”：简单、安全的文件分享服务
-trailheadPromo = 有种方法可以保护您的隐私，加入 Firefox。
+trailheadPromo = 捍卫隐私不是幻想。加入 Firefox 一同抗争。
 learnMore = 详细了解。
+downloadFlagged = 由于违反服务条款，此链接已被禁用。
+downloadConfirmTitle = 除此之外
+downloadConfirmDescription = 请确保您信任发送此文件的人，因为我们无法验证该文件是否会损坏您的设备。
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [one] 我信任发送此文件的人
+       *[other] 我信任发送这些文件的人
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [one] 举报此可疑文件
+       *[other] 举报这些可疑文件
+    }
+reportDescription = 帮助我们了解发生了什么。您认为这些文件存在什么问题？
+reportUnknownDescription = 请转至您要举报的链接 URL，然后点击 “{ reportFile }”。
+reportButton = 举报
+reportReasonMalware = 这些文件包含恶意软件或是网络钓鱼攻击的一环。
+reportReasonPii = 这些文件包含我的个人身份信息。
+reportReasonAbuse = 这些文件包含非法或滥用内容。
+reportReasonCopyright = 要举报版权或商标侵权，请按照<a>此页面</a>中所述步骤。
+reportedTitle = 文件已举报
+reportedDescription = 感谢，我们已收到您关于这些文件的举报。

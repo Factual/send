@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Opinión
 importingFile = Importando…
 encryptingFile = Cifrando…
 decryptingFile = Descifrando…
@@ -116,6 +115,7 @@ legalDateStamp = Versión 1.0, con fecha 12 de marzo de 2019.
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days }d { $hours }h { $minutes }m
 addFilesButton = Seleccionar archivos para subir
+trustWarningMessage = Asegurate de que confiás en tu destinatario cuando compartís datos confidenciales.
 uploadButton = Subir
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Arrastrar y soltar archivos
@@ -153,3 +153,33 @@ shareLinkButton = Compartir el enlace
 shareMessage = Descargar "{ $name }" con { -send-brand }: compartir archivos de forma simple y segura
 trailheadPromo = Hay una forma de proteger tu privacidad. Unite a Firefox.
 learnMore = Conocer más.
+downloadFlagged = Este enlace fue deshabilitado por violar los términos del servicio.
+downloadConfirmTitle = Una cosa más
+downloadConfirmDescription = Asegurate de confiar en la persona que te envió este archivo porque no podemos verificar que no va a dañar tu dispositivo.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [one] Confío en la persona que envió este archivo
+       *[other] Confío en la persona que envió estos archivos
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [one] Denunciar este archivo como sospechoso
+       *[other] Denunciar estos archivos como sospechosos
+    }
+reportDescription = Ayudanos a entender lo que está pasando. ¿Qué creés que está mal con estos archivos?
+reportUnknownDescription = Navegá a la url del enlace que querés denunciar y hacé clic en "{ reportFile }".
+reportButton = Denunciar
+reportReasonMalware = Estos archivos contienen programas dañinos o son parte de un fraude electrónico.
+reportReasonPii = Estos archivos contienen información personal que me puede identificar.
+reportReasonAbuse = Estos archivos contienen contenido ilegal o abusivo.
+reportReasonCopyright = Para denunciar una infracción de derechos de autor o de marca registrada, seguí el proceso descrito en <a>esta página</a>.
+reportedTitle = Archivos denunciados
+reportedDescription = Gracias. Recibimos tu denuncia sobre estos archivos.

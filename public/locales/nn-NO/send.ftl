@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Tilbakemelding
 importingFile = Importerer…
 encryptingFile = Krypterer…
 decryptingFile = Dekrypterer...
@@ -94,7 +93,7 @@ totalSize = Total storleik: { $size }
 copyLinkDescription = Kopier lenka for å dele fila di:
 copyLinkButton = Kopier lenke
 downloadTitle = Last ned filer
-downloadDescription = Denne fila vart delt via { -send-brand } med ende-til-ende-kryptering og ei lenke som automatisk går ut.
+downloadDescription = Denne fila vart delt via { -send-brand }, med ende-til-ende-kryptering, og ei lenke som automatisk går ut.
 trySendDescription = Prøv { -send-brand } for enkel og sikker fildeling.
 # count will always be > 10
 tooManyFiles =
@@ -116,6 +115,7 @@ legalDateStamp = Versjon 1.0, datert den 12 mars 2019
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days }d { $hours }t { $minutes }m
 addFilesButton = Vel filer som skal lastast opp
+trustWarningMessage = Forsikre deg om at du stolar på mottakaren din når du deler sensitive data.
 uploadButton = Last opp
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Dra og slepp filer
@@ -153,3 +153,33 @@ shareLinkButton = Del lenke
 shareMessage = Last ned "{ $name }" med { -send-brand }: enkel, trygg fildelning
 trailheadPromo = Det finst ein måte å ta vare på personvernet ditt. Ver med Firefox på ferda.
 learnMore = Les meir.
+downloadFlagged = Denne koplinga er deaktivert på grunn av brot på vilkåra for tenesta.
+downloadConfirmTitle = Ein ting til
+downloadConfirmDescription = Forsikre deg om at du stolar på personen som sende deg denne fila fordi, vi ikkje kan stadfeste at ho ikkje vil skade eininga di.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [one] Eg stolar på personen som sende denne fila
+       *[other] Eg stolar på personen som sende desse filene
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [one] Rapporter denne fila som mistenkjeleg
+       *[other] Rapporter desse filene som mistenkjelege
+    }
+reportDescription = Hjelp oss å forstå kva som skjer. Kva trur du er gale med desse filene?
+reportUnknownDescription = Gå til lenkeadressa du ønskjer å rapportere, og klikk «{ reportFile }».
+reportButton = Rapporter
+reportReasonMalware = Desse filene inneheld skadeleg programvare eller er del av eit nettfiskingsangrep (phishing-angrep).
+reportReasonPii = Desse filene inneheld personleg identifiserbar informasjon om meg.
+reportReasonAbuse = Desse filene inneheld ulovleg eller valdeleg innhald.
+reportReasonCopyright = For å rapportere brot på opphavsrett eller varemerke, bruk prosessen som er beskriven på <a>denne sida</a>.
+reportedTitle = Rapporterte filer
+reportedDescription = Takk skal du ha. Vi har fått rapporten din om desse filene.

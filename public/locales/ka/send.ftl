@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = გამოხმაურება
 importingFile = გადმოტანა...
 encryptingFile = დაშიფვრა...
 decryptingFile = გაშიფვრა...
@@ -116,6 +115,7 @@ legalDateStamp = ვერსია 1.0, დათარიღებული 12
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days } დღე { $hours } სთ { $minutes } წთ
 addFilesButton = ფაილების შერჩევა ასატვირთად
+trustWarningMessage = დარწმუნდით, რომ ენდობით მიმღებს, სანამ მნიშვნელოვან მონაცემებს გაუზიარებთ.
 uploadButton = ატვირთვა
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = გადმოიტანეთ და მოათავსეთ ფაილები
@@ -153,3 +153,33 @@ shareLinkButton = ბმულის გაზიარება
 shareMessage = ჩამოტვირთეთ „{ $name }“ { -send-brand }-ით: ფაილების გაზიარება მარტივად, უსაფრთხოდ
 trailheadPromo = გზა, თქვენი პირადულობის დასაცავად. შემოუერთდით Firefox-ს.
 learnMore = იხილეთ ვრცლად.
+downloadFlagged = ბმული გაუქმებულია, მომსახურების პირობების დარღვევის გამო.
+downloadConfirmTitle = კიდევ ერთი რამ
+downloadConfirmDescription = დარწმუნდით, რომ სანდოა პირი, ვინც ეს ფაილი გამოგიგზავნათ, რადგან ჩვენ ვერ დაგპირდებით, რომ არ დააზიანებს თქვენს მოწყობილობას.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [one] ვენდობი პირს, რომელმაც ეს ფაილი გამომიგზავნა
+       *[other] ვენდობი პირს, რომელმაც ეს ფაილები გამომიგზავნა
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [one] მოხსენება, საეჭვო ფაილზე
+       *[other] მოხსენება, საეჭვო ფაილებზე
+    }
+reportDescription = დაგვეხმარეთ გარკვევაში. თქვენი აზრით, რა ფაილებია?
+reportUnknownDescription = გთხოვთ გადახვიდეთ ბმულზე, რომლზეც გსურთ გვაცნობოთ და დაწკაპეთ „{ reportFile }“.
+reportButton = მოხსენება
+reportReasonMalware = ეს ფაილები შეიცავს მავნე კოდს ან თაღლითური შეტევის ნაწილია.
+reportReasonPii = ეს ფაილები შეიცავს ვინაობის ამსახველ მასალას ჩემზე.
+reportReasonAbuse = ეს ფაილები შეიცავს უკანონო ან შეურაცხმყოფელ მასალას.
+reportReasonCopyright = საავტორო უფლებებთან ან სავაჭრო ნიშნებთან დაკავშირებულ დარღვევებზე მოხსენებისთვის, გთხოვთ იხილოთ განმარტებითი მითითებები <a>ამ გვერდზე</a>.
+reportedTitle = ფაილებზე მოხსენება გაგზავნილია
+reportedDescription = გმადლობთ. მივიღეთ თქვენი მოხსენება, ამ ფაილებზე.

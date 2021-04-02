@@ -1,20 +1,19 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Повратне информације
 importingFile = Увозим…
 encryptingFile = Шифрујем…
 decryptingFile = Дешифрујем…
 downloadCount =
     { $num ->
-        [one] преузимања
-        [few] преузимања
-       *[other] преузимања
+        [one] { $num } преузимања
+        [few] { $num } преузимања
+       *[other] { $num } преузимања
     }
 timespanHours =
     { $num ->
-        [one] сата
-        [few] сата
-       *[other] сати
+        [one] { $num } сата
+        [few] { $num } сата
+       *[other] { $num } сати
     }
 copiedUrl = Ископирано!
 unlockInputPlaceholder = Лозинка
@@ -124,6 +123,7 @@ legalDateStamp = Издање 1.0, датум објављивања 12. мар�
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days }д { $hours }ч { $minutes }м
 addFilesButton = Изаберите датотеке за отпремање
+trustWarningMessage = Будите сигурни да верујете примаоцу пре дељења осетљивих података.
 uploadButton = Отпреми
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Превуците и пустите датотеке
@@ -162,3 +162,35 @@ shareLinkButton = Поделите везу
 shareMessage = Преузмите „{ $name }“ помоћу програма { -send-brand }:  једноставно и безбедно дељење датотека
 trailheadPromo = Постоји начин да заштитите вашу приватност. Придружите се Firefox-у.
 learnMore = Сазнајте више.
+downloadFlagged = Ова веза је онемогућена због кршења услова услуге.
+downloadConfirmTitle = Још једна ствар
+downloadConfirmDescription = Будите сигурни да верујете особи која вам је послала ову датотеку, јер не можемо обећати да неће оштетити ваш уређа.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [one] Верујем особи која је послала ову датотеку
+        [few] Верујем особи која је послала ове датотеке
+       *[other] Верујем особама које су послале ове датотеке
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [one] Пријави ову датотеку као сумњиву
+        [few] Пријави ове датотеке као сумњиве
+       *[other] Пријави ове датотеке као сумњиве
+    }
+reportDescription = Помозите нам да схватимо шта се дешава. Шта мислите да није у реду са овим датотекама?
+reportUnknownDescription = Идите на адресу везе коју желите да пријавите и изаберите “{ reportFile }”.
+reportButton = Пријави
+reportReasonMalware = Ове датотеке садрже злонамеран софтвер или су део напада за крађу идентитета.
+reportReasonPii = Ове датотеке садрже моје личне податке.
+reportReasonAbuse = Ове датотеке садрже илегални или насилни садржај.
+reportReasonCopyright = Да бисте пријавили кршење ауторских права или заштитног знака, следите кораке на <a>овој страници</a>.
+reportedTitle = Датотеке су пријављене
+reportedDescription = Хвала вам. Примили смо вашу пријаву ових датотека.

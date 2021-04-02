@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Roit hoc'h ali
 importingFile = Oc'h enporzhiañ …
 encryptingFile = Oc'h enrinegañ..
 decryptingFile = Oc'h ezrinegañ...
@@ -140,6 +139,7 @@ legalDateStamp = Handelv 1.0, d'an 12 a viz Meurzh 2019
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days }d { $hours }e { $minutes }m
 addFilesButton = Diuzit ur restr da bellgas
+trustWarningMessage = Bezit sur ho peus fiziañs en ho tegemerer pa rannit roadennoù kizidik.
 uploadButton = Pellgas
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Riklit ha laoskit restroù
@@ -180,3 +180,6 @@ shareLinkButton = Rannañ an ere
 shareMessage = Pellgargañ "{ $name }" gant { -send-brand }: rannañ restroù en un doare eeun ha prevez
 trailheadPromo = Un doare a zo da wareziñ ho puhez prevez. Tremenit da Firefox.
 learnMore = Gouzout hiroc'h.
+downloadFlagged = Diweredekaet eo bet an ere-se dre ma ne zouje ket ouzh an divizoù arver.
+downloadConfirmTitle = Un draig ouzhpenn
+downloadConfirmDescription = Bezit sur ho peus fiziañs en deus en deus kaset ar restr-mañ dre ma n'haller ket gwiriañ ne freuzo ket ho trevnad.

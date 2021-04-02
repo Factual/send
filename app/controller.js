@@ -49,8 +49,8 @@ export default function(state, emitter) {
     state.user.login(email);
   });
 
-  emitter.on('logout', () => {
-    state.user.logout();
+  emitter.on('logout', async () => {
+    await state.user.logout();
     metrics.loggedOut({ trigger: 'button' });
     emitter.emit('pushState', '/');
   });
@@ -178,6 +178,12 @@ export default function(state, emitter) {
         //cancelled. do nothing
         metrics.cancelledUpload(archive, err.duration);
         render();
+      } else if (err.message === '401') {
+        const refreshed = await state.user.refresh();
+        if (refreshed) {
+          return emitter.emit('upload');
+        }
+        emitter.emit('pushState', '/error');
       } else {
         // eslint-disable-next-line no-console
         console.error(err);
@@ -226,9 +232,10 @@ export default function(state, emitter) {
     } catch (e) {
       if (e.message === '401' || e.message === '404') {
         file.password = null;
-        if (!file.requiresPassword) {
-          return emitter.emit('pushState', '/404');
-        }
+        file.dead = e.message === '404';
+      } else {
+        console.error(e);
+        return emitter.emit('pushState', '/error');
       }
     }
 
@@ -244,7 +251,8 @@ export default function(state, emitter) {
     const start = Date.now();
     try {
       const dl = state.transfer.download({
-        stream: state.capabilities.streamDownload
+        stream: state.capabilities.streamDownload,
+        storage: state.storage
       });
       render();
       await dl;
@@ -263,7 +271,9 @@ export default function(state, emitter) {
       } else {
         // eslint-disable-next-line no-console
         state.transfer = null;
-        const location = err.message === '404' ? '/404' : '/error';
+        const location = ['404', '403'].includes(err.message)
+          ? '/404'
+          : '/error';
         if (location === '/error') {
           state.sentry.withScope(scope => {
             scope.setExtra('duration', err.duration);
@@ -304,6 +314,21 @@ export default function(state, emitter) {
       state.modal = null;
     }
     render();
+  });
+
+  emitter.on('report', async ({ reason }) => {
+    try {
+      const receiver = state.transfer || new FileReceiver(state.fileInfo);
+      await receiver.reportLink(reason);
+      render();
+    } catch (err) {
+      console.error(err);
+      if (err.message === '404') {
+        state.fileInfo = { reported: true };
+        return render();
+      }
+      emitter.emit('pushState', '/error');
+    }
   });
 
   setInterval(() => {

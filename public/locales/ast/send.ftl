@@ -1,6 +1,5 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Comentarios
 importingFile = Importando...
 encryptingFile = Cifrando...
 decryptingFile = Descifrando...
@@ -21,12 +20,12 @@ downloadButtonLabel = Baxar
 downloadFinish = Completóse la descarga
 fileSizeProgress = ({ $partialSize } de { $totalSize })
 sendYourFilesLink = Probar Firefox Send
-errorPageHeader = ¡Daqué foi mal!
+errorPageHeader = ¡Asocedió daqué malo!
 fileTooBig = Esti ficheru ye mui grande como pa xubilu. Debería tener menos de { $size }.
 linkExpiredAlt = Caducó l'enllaz
 notSupportedHeader = El to restolador nun ta sofitáu.
 notSupportedLink = ¿Por qué'l mio restolador nun ta sofitáu?
-notSupportedOutdatedDetail = Desafortunadamente esta versión de Firefox nun sofita la teunoloxía web qu'usa Firefox Send. Vas precisar anovar Firefox.
+notSupportedOutdatedDetail = Desafortunadamente esta versión de Firefox nun sofita la teunoloxía web qu'usa Firefox Send. Vas precisar anovar el restolador.
 updateFirefox = Anovar Firefox
 deletePopupCancel = Encaboxar
 deleteButtonHover = Desaniciar
@@ -54,9 +53,10 @@ passwordSetError = Nun pudo afitase esta contraseña
 -firefox = Firefox
 -mozilla = Mozilla
 introTitle = Compartición de ficheros privada y cenciella
+introDescription = { -send-brand } déxate compartir ficheros con cifráu puntu a puntu y un enllaz que caduca automáticamente. D'esti mou, asegúreste de que lo que compartes ye privao y nun va tar siempres en llinia.
 notifyUploadEncryptDone = El ficheru ta cifráu y preparáu pa unviase
 # downloadCount is from the downloadCount string and timespan is a timespanMinutes string. ex. 'Expires after 2 downloads or 25 minutes'
-archiveExpiryInfo = Caduca tres { $downloadCount } ó { $timespan }
+archiveExpiryInfo = Caduca dempués de { $downloadCount } ó { $timespan }
 timespanMinutes =
     { $num ->
         [one] 1 minutu
@@ -98,21 +98,24 @@ trySendDescription = Prueba { -send-brand } pa una compartición de ficheros cen
 # count will always be > 10
 tooManyFiles =
     { $count ->
-        [one] Namái pue xubise 1 ficheru al empar.
-       *[other] Namái puen xubise { $count } ficheros al empar.
+        [one] Namás pue xubise 1 ficheru al empar.
+       *[other] Namás puen xubise { $count } ficheros al empar.
     }
 # count will always be > 10
 tooManyArchives =
     { $count ->
-        [one] Namái se permite 1 archivu
-       *[other] Namái se permiten { $count } archivos
+        [one] Namás se permite 1 archivu
+       *[other] Namás se permiten { $count } archivos
     }
 expiredTitle = Esti enllaz caducó.
-notSupportedDescription = { -send-brand } nun va funcionar con esti restolador. { -send-short-brand } funciona meyor cola versión última de { -firefox } y cola versión actual de la mayoría de restoladores.
-legalTitle = Noticia de privacidá de { -send-short-brand }
+notSupportedDescription = { -send-brand } nun va funcionar con esti restolador. { -send-short-brand } funciona meyor cola última versión de { -firefox } y l'actual de la mayoría de restoladores.
+downloadFirefox = Baxar { -firefox }
+legalTitle = Avisu de privacidá de { -send-short-brand }
+legalDateStamp = Versión 1.0, con data del 12 de marzu de 2019
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days }d { $hours }h { $minutes }m
 addFilesButton = Esbillar los ficheros a unviar
+trustWarningMessage = Asegúrate de que t'enfotes nel destinatariu al compartir datos sensibles.
 uploadButton = Xubir
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Arrastra y suelta ficheros
@@ -123,15 +126,15 @@ addPassword = Protexer con una contraseña
 emailPlaceholder = Introduz el to corréu
 # $size is the size of the file, displayed using the fileSize message as format (e.g. "2.5MB")
 signInSizeBump = Anicia sesión pa unviar hasta { $size }
-signInButton = Rexistrase/aniciar sesión
-accountBenefitTitle = Creación d'una cuenta { -firefox } o aniciu de sesión nella
+signInOnlyButton = Aniciar sesión
+accountBenefitTitle = Creación d'una cuenta de { -firefox } o aniciu de sesión nella
 # $size is the size of the file, displayed using the fileSize message as format (e.g. "2.5MB")
 accountBenefitLargeFiles = Comparti ficheros d'hasta { $size }
 accountBenefitDownloadCount = Comparti ficheros con más xente
 accountBenefitTimeLimit =
     { $count ->
-        [one] Caltén activos los enllaces demientres 1 día
-       *[other] Caltén activos los enllaces demientres 1 díes
+        [one] Caltién activos los enllaces demientres 1 día
+       *[other] Caltién activos los enllaces demientres { $count } díes
     }
 accountBenefitSync = Xestiona los ficheros compartíos dende cualesquier preséu
 accountBenefitMoz = Deprendi más tocante a otros servicios de { -mozilla }
@@ -139,3 +142,11 @@ signOut = Zarrar sesión
 okButton = Aceutar
 downloadingTitle = Baxando
 noStreamsWarning = Esti restolador quiciabes nun seya a descifrar un ficheru d'esti tamañu.
+trailheadPromo = Hai un mou de protexer la to privacidá. Xúnite a Firefox.
+learnMore = Deprender más.
+downloadFlagged = Esti enllaz desactivóse por violar los términos del serviciu.
+downloadConfirmTitle = Una cosa más
+reportReasonMalware = Estos ficheros contienen malware o son parte d'un ataque de phishing
+reportReasonPii = Estos ficheros contienen información que m'identifica.
+reportReasonAbuse = Estos ficheros contienen conteníu illegal o abusivu.
+reportedDescription = Gracies. Recibiemos l'informe tocante a estos ficheros.

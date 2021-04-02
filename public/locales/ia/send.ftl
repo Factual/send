@@ -1,18 +1,17 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Reaction
 importingFile = Importation…
 encryptingFile = Cryptation...
 decryptingFile = Decryptation…
 downloadCount =
     { $num ->
-        [one] discargamento
-       *[other] discargamentos
+        [one] { $num } discargamento
+       *[other] { $num } discargamentos
     }
 timespanHours =
     { $num ->
-        [one] hora
-       *[other] horas
+        [one] { $num } hora
+       *[other] { $num } horas
     }
 copiedUrl = Copiate!
 unlockInputPlaceholder = Contrasigno
@@ -22,11 +21,11 @@ downloadFinish = Discargamento completate
 fileSizeProgress = ({ $partialSize } de { $totalSize })
 sendYourFilesLink = Proba Firefox Send
 errorPageHeader = Un error occurreva!
-fileTooBig = Iste file es troppo grande pro lo cargar. Illo debe ser inferior a { $size }.
+fileTooBig = Iste file es troppo grande pro incargar. Illo debe esser inferior a { $size }.
 linkExpiredAlt = Ligamine expirate
 notSupportedHeader = Tu navigator non es supportate
-notSupportedLink = Perque iste navigator non es supportate?
-notSupportedOutdatedDetail = Infelicemente iste version de Firefox non supporta le nove technologias web que move Firefox Send. Tu besonia de actualisar tu navigator.
+notSupportedLink = Proque non es mi navigator supportate?
+notSupportedOutdatedDetail = Infelicemente iste version de Firefox non supporta le nove technologia web que actiona Firefox Send. Tu debe actualisar tu navigator.
 updateFirefox = Actualisar Firefox
 deletePopupCancel = Cancellar
 deleteButtonHover = Deler
@@ -44,7 +43,7 @@ expiresMinutes = { $minutes }m
 # A short status message shown when the user enters a long password
 maxPasswordLength = Maxime longor del contrasigno: { $length }
 # A short status message shown when there was an error setting the password
-passwordSetError = Iste contrasigno non pote ser definite
+passwordSetError = Iste contrasigno non ha potite esser establite
 
 ## Send version 2 strings
 
@@ -55,7 +54,7 @@ passwordSetError = Iste contrasigno non pote ser definite
 -mozilla = Mozilla
 introTitle = Comparti file in maniera confidential
 introDescription = { -send-brand } te pone in grado de compartir files con cryptographia bilateral e un ligamine que automaticamente expira. Assi que tu pote mantener private lo que tu comparti e liberar te del anxietate que tu problema resta online per sempre.
-notifyUploadEncryptDone = Tu file es cryptate e preste pro ser inviate.
+notifyUploadEncryptDone = Tu file es cryptate e preste pro esser inviate
 # downloadCount is from the downloadCount string and timespan is a timespanMinutes string. ex. 'Expires after 2 downloads or 25 minutes'
 archiveExpiryInfo = Expira post { $downloadCount } o { $timespan }
 timespanMinutes =
@@ -99,24 +98,25 @@ trySendDescription = Prova { -send-brand } pro le compartimento de file simple e
 # count will always be > 10
 tooManyFiles =
     { $count ->
-        [one] Solo 1 file al vice pote ser cargate.
-       *[other] Solo { $count } files al vice pote ser cargate.
+        [one] Solmente 1 file pote ser incargate al vice.
+       *[other] Solmente { $count } files pote esser incargate al vice.
     }
 # count will always be > 10
 tooManyArchives =
     { $count ->
-        [one] Solo 1 archivo es consentite.
-       *[other] Solo { $count } archivos es consentite.
+        [one] Solo 1 archivo es permittite.
+       *[other] Solo { $count } archivos es permitter.
     }
 expiredTitle = Iste ligamine ha expirate.
 notSupportedDescription = { -send-brand } non functionara con iste navigator. { -send-short-brand } functiona melio con le ultime version de { -firefox }, e functionara con le version actual de plure navigatores.
 downloadFirefox = Discargar { -firefox }
-legalTitle = Politica de confidentialitate de { -send-short-brand }
+legalTitle = Aviso de confidentialitate de { -send-short-brand }
 legalDateStamp = Version 1.0 del 12 martio 2019
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days }d { $hours }h { $minutes }m
-addFilesButton = Selige le files a cargar
-uploadButton = Cargar
+addFilesButton = Selige le files a incargar
+trustWarningMessage = Verifica que tu te fide a tu destinatario quando tu comparti datos sensibile.
+uploadButton = Incargar
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Traher e deponer files
 # the second part of the string 'Drag and drop files or click to send up to 1GB'
@@ -125,8 +125,8 @@ orClickWithSize = o cliccar pro inviar usque { $size }
 addPassword = Proteger per contrasigno
 emailPlaceholder = Insere tu adresse de e-mail
 # $size is the size of the file, displayed using the fileSize message as format (e.g. "2.5MB")
-signInSizeBump = Accede pro inviar usque { $size }
-signInOnlyButton = Authentica te
+signInSizeBump = Aperi session pro inviar usque a { $size }
+signInOnlyButton = Aperir session
 accountBenefitTitle = Crea un conto { -firefox } o registra te
 # $size is the size of the file, displayed using the fileSize message as format (e.g. "2.5MB")
 accountBenefitLargeFiles = Comparti files usque { $size }
@@ -136,12 +136,12 @@ accountBenefitTimeLimit =
         [one] Retene active le ligamine pro 1 die
        *[other] Retene active le ligamine pro { $count } dies
     }
-accountBenefitSync = Gere files compartite ab non importa qual dispositivo
+accountBenefitSync = Gere files compartite ab non importa qual apparato
 accountBenefitMoz = Discoperi altere servicios de { -mozilla }
-signOut = Disconnecter
+signOut = Clauder session
 okButton = OK
 downloadingTitle = Discargamento
-noStreamsWarning = Iste navigator pote non pote decifrar un file assi grande.
+noStreamsWarning = Es possibile que iste navigator non pote decryptar un file de iste proportiones.
 noStreamsOptionCopy = Copiar le ligamine e aperir lo in un altere navigator
 noStreamsOptionFirefox = Prova nostre navigator favorite
 noStreamsOptionDownload = Continuar con iste navigator
@@ -153,3 +153,33 @@ shareLinkButton = Condivide ligamine
 shareMessage = Discarga “{ $name }” con { -send-brand }: condivide files in modo simple e secur
 trailheadPromo = Il ha un via pro proteger tu confidentialitate. Junge te a Firefox!
 learnMore = Saper plus.
+downloadFlagged = Iste ligamine ha essite disactivate per violation del terminos de servicio.
+downloadConfirmTitle = Un altere cosa
+downloadConfirmDescription = Verifica que tu te fide al persona qui te inviava iste file, perque nos non pote verificar que illo non violara tu apparato.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [one] Io me fide al persona qui inviava iste file
+       *[other] Io me fide al persona qui inviava iste files
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [one] reportar iste file como suspecte
+       *[other] reportar iste files como suspecte
+    }
+reportDescription = Adjuta nos a comprender lo que eveni. Que pensa tu es problematic con iste files?
+reportUnknownDescription = Va al URL del ligamine que tu desira signalar e clicca “{ reportFile }”.
+reportButton = Reportar
+reportReasonMalware = Iste files contine malware o es parte de un attacco fraudulente.
+reportReasonPii = Iste files contine informationes personal identificabile re me.
+reportReasonAbuse = Iste files contine contento illegal o abusive.
+reportReasonCopyright = Pro signalar violation de derectos de autor o marca de fabrica, usa le procedura describite a <a>iste pagina</a>.
+reportedTitle = Files reportate
+reportedDescription = Gratias. Nos ha recipite tu reporto sur iste files.

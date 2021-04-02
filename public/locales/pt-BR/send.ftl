@@ -1,13 +1,12 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Opinião
 importingFile = Importando…
 encryptingFile = Criptografando…
 decryptingFile = Descriptografando…
 downloadCount =
     { $num ->
-        [one] 1 download
-       *[other] { $num } downloads
+        [one] baixar 1 vez
+       *[other] baixar { $num } vezes
     }
 timespanHours =
     { $num ->
@@ -23,7 +22,7 @@ fileSizeProgress = ({ $partialSize } de { $totalSize })
 sendYourFilesLink = Experimente o Firefox Send
 errorPageHeader = Oops, ocorreu um erro!
 fileTooBig = Esse arquivo ou grupo de arquivos é grande demais para ser enviado. Deve ser menor que { $size }.
-linkExpiredAlt = Link expirou
+linkExpiredAlt = Link expirado
 notSupportedHeader = Seu navegador não é suportado.
 notSupportedLink = Por que meu navegador não é suportado?
 notSupportedOutdatedDetail = Infelizmente essa versão do Firefox não suporta a tecnologia web que faz o Firefox Send funcionar. Você precisa atualizar o seu navegador.
@@ -54,10 +53,10 @@ passwordSetError = Essa senha não pôde ser definida
 -firefox = Firefox
 -mozilla = Mozilla
 introTitle = Compartilhamento de arquivos fácil e privativo
-introDescription = O { -send-brand } permite compartilhar arquivos com criptografia de ponta a ponta e um link que expira automaticamente. Assim você pode manter o que compartilha privativo e ter certeza que suas coisas não ficarão online para sempre.
+introDescription = O { -send-brand } permite compartilhar arquivos com criptografia de ponta a ponta através de um link que expira automaticamente. Assim você pode proteger o que compartilha e ter certeza que suas coisas não ficarão online para sempre.
 notifyUploadEncryptDone = Seu arquivo foi criptografado e está pronto para ser enviado
 # downloadCount is from the downloadCount string and timespan is a timespanMinutes string. ex. 'Expires after 2 downloads or 25 minutes'
-archiveExpiryInfo = Expirar após { $downloadCount } ou { $timespan }
+archiveExpiryInfo = Expira após { $downloadCount } ou { $timespan }
 timespanMinutes =
     { $num ->
         [one] 1 minuto
@@ -116,9 +115,10 @@ legalDateStamp = Versão 1.0, de 12 de março de 2019
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days }d { $hours }h { $minutes }m
 addFilesButton = Selecionar arquivos para enviar
+trustWarningMessage = Certifique-se de que confia no destinatário ao compartilhar dados sensíveis.
 uploadButton = Enviar
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
-dragAndDropFiles = Arraste e solte arquivos
+dragAndDropFiles = Arraste e solte arquivos aqui
 # the second part of the string 'Drag and drop files or click to send up to 1GB'
 # $size is the size of the file, displayed using the fileSize message as format (e.g. "2.5MB")
 orClickWithSize = ou clique para enviar até { $size }
@@ -153,3 +153,33 @@ shareLinkButton = Compartilhar link
 shareMessage = Baixe "{ $name }" com o { -send-brand }: compartilhamento de arquivos simples e seguro
 trailheadPromo = Existe um meio de proteger sua privacidade. Use o Firefox.
 learnMore = Saiba mais.
+downloadFlagged = Este link foi desativado por violar os termos do serviço.
+downloadConfirmTitle = Mais uma coisa
+downloadConfirmDescription = Certifique-se de que confia na pessoa que enviou este arquivo, pois não podemos conferir se não prejudicará seu dispositivo.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [one] Eu confio na pessoa que enviou este arquivo
+       *[other] Eu confio na pessoa que enviou estes arquivos
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [one] Denunciar este arquivo como suspeito
+       *[other] Denunciar estes arquivos como suspeitos
+    }
+reportDescription = Ajude-nos a entender o que está acontecendo. O que você acha que há de errado com estes arquivos?
+reportUnknownDescription = Acesse o endereço do link que deseja denunciar e clique em “{ reportFile }”.
+reportButton = Denunciar
+reportReasonMalware = Estes arquivos contêm malware (código malicioso) ou fazem parte de um ataque de phishing (fraude).
+reportReasonPii = Estes arquivos contêm informações de identificação pessoal sobre mim.
+reportReasonAbuse = Estes arquivos contêm conteúdo ilegal ou abusivo.
+reportReasonCopyright = Para denunciar violação de direitos autorais ou de marca, siga o procedimento descrito <a>nesta página</a>.
+reportedTitle = Arquivos denunciados
+reportedDescription = Obrigado. Recebemos sua denúncia sobre estes arquivos.

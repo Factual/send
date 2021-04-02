@@ -1,9 +1,8 @@
 # Firefox Send is a brand name and should not be localized.
 title = Firefox Send
-siteFeedback = Comentario
 importingFile = Importando...
-encryptingFile = Encriptando...
-decryptingFile = Desencriptando...
+encryptingFile = Cifrando...
+decryptingFile = Descifrando...
 downloadCount =
     { $num ->
         [one] 1 descarga
@@ -21,11 +20,11 @@ downloadButtonLabel = Descargar
 downloadFinish = Descarga completa
 fileSizeProgress = ({ $partialSize } de { $totalSize })
 sendYourFilesLink = Prueba Firefox Send
-errorPageHeader = ¡Se produjo un error!
+errorPageHeader = ¡Se ha producido un error!
 fileTooBig = Ese archivo es muy grande. Debería ocupar menos de { $size }.
 linkExpiredAlt = Enlace caducado
-notSupportedHeader = Tu navegador no está admitido.
-notSupportedLink = ¿Por qué no se admite mi navegador?
+notSupportedHeader = Tu navegador no es compatible.
+notSupportedLink = ¿Por qué mi navegador no es compatible?
 notSupportedOutdatedDetail = Lamentablemente, esta versión de Firefox no admite la tecnología web que impulsa Firefox Send. Tendrás que actualizar tu navegador.
 updateFirefox = Actualizar Firefox
 deletePopupCancel = Cancelar
@@ -33,7 +32,7 @@ deleteButtonHover = Eliminar
 footerLinkLegal = Legal
 footerLinkPrivacy = Privacidad
 footerLinkCookies = Cookies
-passwordTryAgain = Contraseña incorrecta. Inténtelo de nuevo.
+passwordTryAgain = Contraseña incorrecta. Inténtalo de nuevo.
 javascriptRequired = Firefox Send requiere JavaScript
 whyJavascript = ¿Por qué Firefox Send requiere JavaScript?
 enableJavascript = Por favor, activa JavaScript y vuelve a intentarlo.
@@ -116,6 +115,7 @@ legalDateStamp = Versión 1.0 del 12 de marzo de 2019
 # A short representation of a countdown timer containing the number of days, hours, and minutes remaining as digits, example "2d 11h 56m"
 expiresDaysHoursMinutes = { $days }d { $hours }h { $minutes }m
 addFilesButton = Seleccionar archivos para subir
+trustWarningMessage = Asegúrate de que confías en tu destinatario cuando compartas datos sensibles.
 uploadButton = Subir
 # the first part of the string 'Drag and drop files or click to send up to 1GB'
 dragAndDropFiles = Arrastrar y soltar archivos
@@ -153,3 +153,33 @@ shareLinkButton = Compartir enlace
 shareMessage = Descargar “{ $name }” con { -send-brand }: comparte archivos de forma segura y sencilla
 trailheadPromo = Existe la forma de proteger tu privacidad. Únete a Firefox.
 learnMore = Saber más.
+downloadFlagged = Este enlace ha sido desactivado por violar los términos del servicio.
+downloadConfirmTitle = Una cosa más
+downloadConfirmDescription = Asegúrate de confiar en la persona que te envió este archivo porque no podemos verificar que no va a dañar tu dispositivo.
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+downloadTrustCheckbox =
+    { $count ->
+        [one] Confío en la persona que envió este archivo
+       *[other] Confío en la persona que envió estos archivos
+    }
+# This string has a special case for '1' and [other] (default). If necessary for
+# your language, you can add {$count} to your translations and use the
+# standard CLDR forms, or only use the form for [other] if both strings should
+# be identical.
+reportFile =
+    { $count ->
+        [one] Denunciar este archivo como sospechoso
+       *[other] Denunciar estos archivos como sospechosos
+    }
+reportDescription = Ayúdanos a entender lo que está pasando. ¿Qué crees que está mal con estos archivos?
+reportUnknownDescription = Por favor, ve a la url del enlace que quieres denunciar y haz clic en “{ reportFile }”.
+reportButton = Denunciar
+reportReasonMalware = Estos archivos contienen malware o son parte de un ataque de phishing.
+reportReasonPii = Estos archivos contienen información personal identificable sobre mí.
+reportReasonAbuse = Estos archivos tienen contenido ilegal o abusivo.
+reportReasonCopyright = Para denunciar una infracción de derechos de autor o marca registrada, sigue el proceso descrito en <a>esta página</a>.
+reportedTitle = Archivos denunciados
+reportedDescription = Gracias. Hemos recibido tu denuncia sobre estos archivos.

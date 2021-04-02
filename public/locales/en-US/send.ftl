@@ -1,10 +1,7 @@
 # Firefox Send is a brand name and should not be localized.
-<<<<<<< HEAD
-title = Factual SendPass
+title = Foursquare SendPass
 siteFeedback = Feedback
 =======
-title = Firefox Send
->>>>>>> 11319080a8fe012cc6bde61b4ad4ccdec3c2e618
 importingFile = Importing…
 encryptingFile = Encrypting…
 decryptingFile = Decrypting…
@@ -22,7 +19,7 @@ unlockButtonLabel = Unlock
 downloadButtonLabel = Download
 downloadFinish = Download complete
 fileSizeProgress = ({ $partialSize } of { $totalSize })
-sendYourFilesLink = Try Factual SendPass
+sendYourFilesLink = Try Foursquare SendPass
 errorPageHeader = Something went wrong!
 fileTooBig = That file is too big to upload. It should be less than { $size }
 linkExpiredAlt = Link expired
@@ -36,8 +33,8 @@ footerLinkLegal = Legal
 footerLinkPrivacy = Privacy
 footerLinkCookies = Cookies
 passwordTryAgain = Incorrect password. Try again.
-javascriptRequired = Factual SendPass requires JavaScript
-whyJavascript = Why does Factual SendPass require JavaScript?
+javascriptRequired = Foursquare SendPass requires JavaScript
+whyJavascript = Why does Foursquare SendPass require JavaScript?
 enableJavascript = Please enable JavaScript and try again.
 # A short representation of a countdown timer containing the number of hours and minutes remaining as digits, example "13h 47m"
 expiresHoursMinutes = { $hours }h { $minutes }m
@@ -51,7 +48,7 @@ passwordSetError = This password could not be set
 ## Send version 2 strings
 
 # Firefox Send, Send, Firefox, Mozilla are proper names and should not be localized
--send-brand = Factual SendPass
+-send-brand = Foursquare SendPass
 -send-short-brand = SendPass
 -firefox = Firefox
 -mozilla = Mozilla
@@ -148,10 +145,6 @@ shareLinkDescription = Share the link to your file:
 shareLinkButton = Share link
 # $name is the name of the file
 shareMessage = Download “{ $name }” with { -send-brand }: simple, safe file sharing
-<<<<<<< HEAD
-trailheadPromo = 
-learnMore = 
-=======
 trailheadPromo = There is a way to protect your privacy. Join Firefox.
 learnMore = Learn more.
 downloadFlagged = This link has been disabled for violating the terms of service.
@@ -184,4 +177,3 @@ reportReasonAbuse = These files contain illegal or abusive content.
 reportReasonCopyright = To report copyright or trademark infringement, use the process described at <a>this page</a>.
 reportedTitle = Files Reported
 reportedDescription = Thank you. We have received your report on these files.
->>>>>>> 11319080a8fe012cc6bde61b4ad4ccdec3c2e618
